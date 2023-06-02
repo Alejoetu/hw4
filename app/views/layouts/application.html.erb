@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tacostagram Final</title>
+    <title>HM4</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,12 @@
 
   <body>
     <div>
+    <% if flash["notice"] %>
+      <div class="alert alert-success mt-3">
       <%= flash["notice"] %>
+      </div>
+      <% end %> 
+
     </div>
     <div>
   <nav class="navbar bg-dark border-bottom border-bottom-dark mb-3" data-bs-theme="dark"
@@ -34,7 +39,7 @@
 </span>
 </div>
 </nav>
-      
+ 
 
     <%= yield %>
   </body>
