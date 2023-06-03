@@ -1,0 +1,20 @@
+<style>
+body {
+  height: 400px;
+  background-image: url("https://img.freepik.com/foto-gratis/plano-mapa-juguete-blanco-vista-superior_23-2148666303.jpg?w=826&t=st=1684433443~exp=1684434043~hmac=b3bd21f840d32957a1da26563f288fe6cca3be6bada60d4101ef1e1d40687cda");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position-x:25%%;
+  background-position-y:25%%;
+
+}
+</style>
+
+
+<h1> Welcome to your travel Journal! <span class="badge bg-secondary"></span></h1>
+
+<p>
+  <% if @current_user %>
+  <a href="/places">Go to your Places </a>
+  <% end %>
+</p>
