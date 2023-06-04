@@ -2,7 +2,7 @@
 
 <h2>My Posts</h2>
 
-
+<p>
   <% for post in @posts %>
     <h3><%= post["title"] %></h3>
     <h4><%= post["posted_on"] %></h4>
@@ -13,11 +13,11 @@
          <img src="<%= post["image"] %>" class="img-fluid">
       <% end %></p> 
   <% end %>
-
+</p>
 
 <div>
 <p>
-<a href="/posts/new/" class="btn btn-primary">New Post</a>
+<a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 </div>
 

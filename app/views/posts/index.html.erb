@@ -3,8 +3,7 @@
 
    <% for post in @posts %>
     <p>
-      <a href="/posts/<%= post["id"] %>">
-      <%= post["title"] %> </a>
+      <a href="/posts/<%= post["id"] %>"><%= post["title"] %> </a>
       <p><%= post["posted_on"] %></p> 
       <p><% if post.uploaded_image.attached? %>
         <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
@@ -12,10 +11,7 @@
          <img src="<%= post["image"] %>" class="img-fluid">
       <% end %></p> 
     </p>
-  <br>
-  </br>
    <% end %>
-
 <br>
 </br>
 <p><a href="/places">Back to places</a></p>
