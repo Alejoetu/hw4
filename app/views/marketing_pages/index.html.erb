@@ -13,8 +13,12 @@ body {
 
 <h1> Welcome to your travel Journal! <span class="badge bg-secondary"></span></h1>
 
+<div>
 <p>
   <% if @current_user %>
-  <a href="/places">Go to your Places </a>
+  <a href="/places" class="btn btn-dark">Go to your places</a>
+</p>
+</div>
+
   <% end %>
 </p>

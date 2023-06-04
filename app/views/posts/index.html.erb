@@ -6,6 +6,11 @@
       <a href="/posts/<%= post["id"] %>">
       <%= post["title"] %> </a>
       <p><%= post["posted_on"] %></p> 
+      <p><% if post.uploaded_image.attached? %>
+        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+      <% else %>
+         <img src="<%= post["image"] %>" class="img-fluid">
+      <% end %></p> 
     </p>
   <br>
   </br>
