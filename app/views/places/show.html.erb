@@ -1,28 +1,37 @@
 <h1><%= @place["name"] %></h1>
 
-<h2>My Posts</h2>
-
-<p>
-  <% for post in @posts %>
-    <h3><%= post["title"] %></h3>
-    <h4><%= post["posted_on"] %></h4>
-    <p><%= post["description"] %></p>
-    <p><% if post.uploaded_image.attached? %>
-        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
-      <% else %>
-         <img src="<%= post["image"] %>" class="img-fluid">
-      <% end %></p> 
-  <% end %>
-</p>
-
 <div>
 <p>
 <a href="/posts/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 </div>
+<p>
+<div class="row">
+  <% for post in @posts %>
+    <div class="col-md-3 col-sm-3">
+    <h3><%= post["title"] %></h3>
+    <p><%= post["posted_on"] %></p>
+    <p><% if post.uploaded_image.attached? %>
+        <img src="<%= url_for(post.uploaded_image) %>" class="mw-100 mh-100">
+      <% else %>
+         <img src="<%= post["image"] %>" class="mw-100 mh-100">
+      <% end %></p> 
+    <p><%= post["description"] %></p>
+    </div>
+  <% end %>
+</div>
+</p>
+
+
 
 <div>
 <p>
 <a href="/places/" class="btn btn-success">Back to all places</a>
 </p>
 </div>
+
+<div>
+<p>
+<p><%= button_to "Delete this place", @place, :method => "delete" %></p>
+</p>
+ </div> 
