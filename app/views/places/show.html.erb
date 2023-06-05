@@ -12,9 +12,9 @@
     <h3><%= post["title"] %></h3>
     <p><%= post["posted_on"] %></p>
     <p><% if post.uploaded_image.attached? %>
-        <img src="<%= url_for(post.uploaded_image) %>" class="mw-100 mh-100">
+        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
       <% else %>
-         <img src="<%= post["image"] %>" class="mw-100 mh-100">
+         <img src="<%= post["image"] %>" class="img-fluid">
       <% end %></p> 
     <p><%= post["description"] %></p>
     </div>
