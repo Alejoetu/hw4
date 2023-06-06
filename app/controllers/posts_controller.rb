@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    if @current_user
-    @posts = Post.find_by({ "id" => params["id"] })
-    end
+    @posts = Post.all
   end
 
   def show

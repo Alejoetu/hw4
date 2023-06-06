@@ -1,7 +1,8 @@
 class PlacesController < ApplicationController
 
   def index
-    @places = Place.all
+    @place = Place.find_by({ "id" => params["id"] })
+    @posts = Post.where({ "place_id" => @place["id"], "user_id" => @current_user["id"] })
   end
 
   def show
