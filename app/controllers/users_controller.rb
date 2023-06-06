@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user["password"] = BCrypt::Password.create(params["user"]["password"])
     session["user_id"] = @user["id"]
     @user.save
-    redirect_to "/"
+    flash["notice"] = "Welcome to Trusty Traveler! Now, you need to login."
+    redirect_to "/login"
   end
 end

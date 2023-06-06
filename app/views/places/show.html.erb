@@ -1,4 +1,4 @@
-<h1><%= @place["name"] %></h1>
+<h2><%= @place["name"] %></h2>
 
 <div>
 <p>
@@ -7,18 +7,18 @@
 </div>
 <p>
 <div class="row">
-  <% for post in @posts %>
-    <div class="col-md-3 col-sm-3">
-    <h3><%= post["title"] %></h3>
-    <p><%= post["posted_on"] %></p>
-    <p><% if post.uploaded_image.attached? %>
-        <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
-      <% else %>
-         <img src="<%= post["image"] %>" class="img-fluid">
-      <% end %></p> 
-    <p><%= post["description"] %></p>
-    </div>
-  <% end %>
+    <% for post in @posts %>
+      <div class="col-lg-4">
+      <h3><%= post["title"] %></h3>
+      <p><%= post["posted_on"] %></p>
+      <p><% if post.uploaded_image.attached? %>
+            <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
+          <% else %>
+            <img src="<%= post["image"] %>" class="img-fluid">
+          <% end %></p> 
+      <p><%= post["description"] %></p>
+      </div>
+    <% end %>
 </div>
 </p>
 
