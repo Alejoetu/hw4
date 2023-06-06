@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     if @current_user
-    @posts = Post.all
+    @posts = Post.find_by({ "id" => params["id"] })
     end
   end
 
