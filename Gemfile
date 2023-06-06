@@ -15,6 +15,7 @@ group :development, :test do
 end
 
 group :development do
+
   gem "sqlite3", "~> 1.4"
 end
 
